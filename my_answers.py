@@ -44,7 +44,8 @@ def build_part1_RNN(window_size):
 def cleaned_text(text):
     from string import ascii_letters
 
-    non_valid_chars = set(text) - set(ascii_letters)
+    punctuation = ['!', ',', '.', ':', ';', '?']
+    non_valid_chars = set(text) - set(ascii_letters + ''.join(punctuation))
 
     for non_valid_char in non_valid_chars:
         text = text.replace(non_valid_char, ' ')
